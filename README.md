@@ -1,6 +1,5 @@
 # FITLOG
-
-FitLog is a dark, no-nonsense workout library and planning app. Browse workouts, view detailed exercise information, add workouts to today's plan, save workouts for later, and manage your workout list from one place.
+FitLog is a modern workout library and planning app designed to make workout tracking simple and organized. Explore a variety of exercises, view detailed workout information, add exercises to your daily plan, save workouts for later, and easily manage your fitness routine in one place.
 
 ## Technologies Used
 

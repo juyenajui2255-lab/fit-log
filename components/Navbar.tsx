@@ -1,9 +1,10 @@
 "use client";
-
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import logo from "@/assets/logo.png";
 
 export default function Navbar() {
+    const pathname = usePathname();
     const [planCount, setPlanCount] = useState(0);
     const [savedCount, setSavedCount] = useState(0);
 

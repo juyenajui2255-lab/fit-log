@@ -18,7 +18,7 @@ export default function Page() {
   const [activeTab, setActiveTab] = useState("today");
   const [sortBy, setSortBy] = useState("duration");
 
-  // Today's Plan localStorage থেকে নেওয়া
+  // Today's Plan localStorage 
   useEffect(() => {
     try {
       const savedPlan = localStorage.getItem("todaysPlan");
@@ -35,7 +35,7 @@ export default function Page() {
     }
   }, []);
 
-  // Saved Workouts localStorage থেকে নেওয়া
+  // Saved Workouts localStorage 
   useEffect(() => {
     try {
       const saved = localStorage.getItem("savedWorkouts");
@@ -52,7 +52,7 @@ export default function Page() {
     }
   }, []);
 
-  // Library-এর original workout data খুঁজে বের করা
+  // Library's original workout data
   const getWorkoutData = (workout) => {
     return workouts.find((item) => item.id === workout.id) || workout;
   };
@@ -78,11 +78,11 @@ export default function Page() {
     return sorted;
   }, [plan, sortBy]);
 
-  // কোন tab active তার উপর workout list
+  // tab active workout list
   const displayWorkouts =
     activeTab === "today" ? sortedPlan : savedWorkouts;
 
-  // কোন tab active তার উপর stats
+  // tab active stats
   const currentWorkouts =
     activeTab === "today" ? plan : savedWorkouts;
 
@@ -98,7 +98,7 @@ export default function Page() {
     0
   );
 
-  // Today's Plan থেকে remove
+  // Today's Plan remove
   const handleRemove = (id) => {
     const updatedPlan = plan.filter(
       (workout) => workout.id !== id
@@ -136,7 +136,7 @@ export default function Page() {
     );
   };
 
-  // Saved থেকে remove
+  // Saved remove
   const handleUnsave = (id) => {
     const updatedSaved = savedWorkouts.filter(
       (workout) => workout.id !== id
@@ -158,7 +158,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[#0b0e13] px-9 py-10 text-white">
 
-      {/* ================= HEADER ================= */}
+      {/* HEADER */}
       <div className="flex items-start justify-between">
 
         <div>
@@ -173,7 +173,7 @@ export default function Page() {
 
       </div>
 
-      {/* ================= TABS ================= */}
+      {/* TABS */}
       <div className="mt-8 flex w-fit rounded-xl bg-[#13161c] p-1">
 
         <button
@@ -200,7 +200,7 @@ export default function Page() {
 
       </div>
 
-      {/* ================= STATS ================= */}
+      {/* STATS */}
       <div className="mt-6 grid grid-cols-3 gap-4">
 
         <div className="rounded-2xl border border-[#272c35] bg-[#13161c] p-5">
@@ -235,7 +235,7 @@ export default function Page() {
 
       </div>
 
-      {/* ================= SORT ================= */}
+      {/* SORT */}
       {activeTab === "today" && (
         <div className="mt-6 flex justify-end">
 
@@ -269,7 +269,7 @@ export default function Page() {
         </div>
       )}
 
-      {/* ================= WORKOUT LIST ================= */}
+      {/* WORKOUT LIST */}
       <div className="mt-6">
 
         {displayWorkouts.length > 0 ? (
@@ -283,7 +283,7 @@ export default function Page() {
               return (
                 <div
                   key={workout.id}
-                  className="flex min-h-[111px] items-center justify-between rounded-2xl border border-[#272c35] bg-[#13161c] px-4 py-4"
+                  className="flex min-h-27.75 items-center justify-between rounded-2xl border border-[#272c35] bg-[#13161c] px-4 py-4"
                 >
 
                   {/* LEFT SIDE */}
@@ -293,7 +293,7 @@ export default function Page() {
                     <img
                       src={workoutData.image}
                       alt={workoutData.name}
-                      className="h-20 w-[140px] rounded-xl object-cover"
+                      className="h-20 w-35 rounded-xl object-cover"
                     />
 
                     {/* INFO */}
@@ -399,8 +399,8 @@ export default function Page() {
 
         ) : (
 
-          /* ================= EMPTY STATE ================= */
-          <div className="flex min-h-[250px] items-center justify-center rounded-2xl border border-dashed border-[#292e37]">
+          /* EMPTY STATE */
+          <div className="flex min-h-62.5 items-center justify-center rounded-2xl border border-dashed border-[#292e37]">
 
             <div className="text-center">
 

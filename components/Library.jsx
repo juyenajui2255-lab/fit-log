@@ -50,7 +50,7 @@ export default function Library() {
 
       {/* Loading State */}
       {loading ? (
-        <div className="flex min-h-[300px] items-center justify-center">
+        <div className="flex min-height: 300px; items-center justify-center">
           <div className="text-center">
             <div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-[#2a2f38] border-t-[#baff00]" />
 

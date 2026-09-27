@@ -24,7 +24,7 @@ export default async function WorkoutDetails({ params }) {
                     <img
                         src={workout.image}
                         alt={workout.name}
-                        className="h-[500px] w-full rounded-xl object-cover"
+                        className="h-125 w-full rounded-xl object-cover"
                     />
                 </div>
 

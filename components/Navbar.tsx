@@ -104,7 +104,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Menu */}
-                <div className="order-3 flex w-full items-center justify-center gap-2 text-sm text-[#9CA3AF] sm:order-none sm:w-auto sm:gap-3">
+                <div className="order-3 flex w-full items-center justify-center gap-2 text-sm text-[#9CA3AF] sm:order-0 sm:w-auto sm:gap-3">
 
                     <a
                         href="/"

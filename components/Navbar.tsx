@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -86,73 +85,78 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="flex items-center justify-between border-b border-[#272B33] px-6 py-4">
+        <nav className="border-b border-[#272B33] px-4 py-3 sm:px-6 sm:py-4">
 
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-                <img
-                    src={logo.src}
-                    alt="FitLog Logo"
-                    className="h-8 w-8"
-                />
+            <div className="flex flex-wrap items-center justify-between gap-3">
 
-                <h1 className="text-xl font-bold">
-                    FITLOG
-                </h1>
-            </div>
+                {/* Logo */}
+                <div className="flex items-center gap-2">
+                    <img
+                        src={logo.src}
+                        alt="FitLog Logo"
+                        className="h-8 w-8"
+                    />
 
-            {/* Menu */}
-            <div className="flex items-center gap-3 text-[#9CA3AF]">
+                    <h1 className="text-lg font-bold sm:text-xl">
+                        FITLOG
+                    </h1>
+                </div>
 
-                <a
-                    href="/"
-                    className="rounded-full px-3 py-2 hover:bg-[#1A2312] hover:text-[#CCFF00]"
-                >
-                    Workouts
-                </a>
+                {/* Menu */}
+                <div className="order-3 flex w-full items-center justify-center gap-2 text-sm text-[#9CA3AF] sm:order-none sm:w-auto sm:gap-3">
 
-                <a
-                    href="/todays-plan"
-                    className="rounded-full px-3 py-2 hover:bg-[#1A2312] hover:text-[#CCFF00]"
-                >
-                    My Plan
-                </a>
+                    <a
+                        href="/"
+                        className="rounded-full px-3 py-2 hover:bg-[#1A2312] hover:text-[#CCFF00]"
+                    >
+                        Workouts
+                    </a>
 
-            </div>
+                    <a
+                        href="/my-plan"
+                        className="rounded-full px-3 py-2 hover:bg-[#1A2312] hover:text-[#CCFF00]"
+                    >
+                        My Plan
+                    </a>
 
-            {/* Badges */}
-            <div className="flex items-center gap-4">
+                </div>
 
-                {/* Plan */}
-                <a
-                    href="/todays-plan"
-                    className="flex items-center gap-2"
-                >
-                    <span>
-                        Plan
-                    </span>
+                {/* Badges */}
+                <div className="flex items-center gap-3 text-sm">
 
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#CCFF00] text-black">
-                        {planCount}
-                    </span>
-                </a>
+                    {/* Plan */}
+                    <a
+                        href="/my-plan"
+                        className="flex items-center gap-1.5"
+                    >
+                        <span>
+                            Plan
+                        </span>
 
-                {/* Save */}
-                <a
-                    href="/todays-plan"
-                    className="flex items-center gap-2"
-                >
-                    <span className="text-[#9CA3AF]">
-                        Save
-                    </span>
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#CCFF00] text-black">
+                            {planCount}
+                        </span>
+                    </a>
 
-                    <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#9CA3AF] text-[#9CA3AF]">
-                        {savedCount}
-                    </span>
-                </a>
+                    {/* Save */}
+                    <a
+                        href="/my-plan"
+                        className="flex items-center gap-1.5"
+                    >
+                        <span className="text-[#9CA3AF]">
+                            Save
+                        </span>
+
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#9CA3AF] text-[#9CA3AF]">
+                            {savedCount}
+                        </span>
+                    </a>
+
+                </div>
 
             </div>
 
         </nav>
     );
 }
+
